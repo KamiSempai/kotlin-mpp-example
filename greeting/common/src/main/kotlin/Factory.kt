@@ -27,11 +27,17 @@ expect object Factory {
 object Factory2 {
 
     fun getValue(): String {
-        if (someValue == null)
-            someValue = "Some factory text"
+        if (someValuesPool == null)
+            someValuesPool = mutableListOf("Text 1", "Text 2", "Text 3")
 
-        return someValue!!
+        if (someValuesPool!!.size == 0) {
+            someValuesPool?.add("Text 11")
+            someValuesPool?.add("Text 12")
+            someValuesPool?.add("Text 13")
+        }
+
+        return someValuesPool!!.removeAt(someValuesPool!!.size - 1)
     }
 
-    private var someValue: String? = null
+    private var someValuesPool: MutableList<String>? = null
 }
