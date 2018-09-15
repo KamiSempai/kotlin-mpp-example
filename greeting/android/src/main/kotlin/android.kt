@@ -10,7 +10,7 @@ actual class Product(actual val user: String) {
     fun androidSpecificOperation() {
         println("I am ${Build.MODEL} by ${Build.MANUFACTURER}")
     }
-    override fun toString() = "Android product of $user for ${Build.MODEL}"
+    override fun toString() = "Android product of $user for ${Build.MODEL}\nFactory2: ${Factory2.getValue()}"
 }
 
 actual object Factory {

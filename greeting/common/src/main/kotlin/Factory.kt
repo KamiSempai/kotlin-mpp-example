@@ -23,3 +23,15 @@ expect object Factory {
     fun create(config: Map<String, String>): Product
     val platform: String
 }
+
+object Factory2 {
+
+    fun getValue(): String {
+        if (someValue == null)
+            someValue = "Some factory text"
+
+        return someValue!!
+    }
+
+    private var someValue: String? = null
+}

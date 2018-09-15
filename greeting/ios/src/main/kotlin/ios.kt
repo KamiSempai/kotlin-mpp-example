@@ -18,7 +18,7 @@ actual class Product(actual val user: String) {
         println("I am $model")
     }
 
-    override fun toString() = "iOS product of $user for $model"
+    override fun toString() = "iOS product of $user for $model\nFactory2: ${Factory2.getValue()}"
 }
 
 actual object Factory {
